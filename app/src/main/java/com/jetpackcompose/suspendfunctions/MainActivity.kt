@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.jetpackcompose.suspendfunctions.screens.LaunchedEffectTestScreen
 import com.jetpackcompose.suspendfunctions.ui.theme.JetpackComposeSuspendFunctionsTheme
+import com.jetpackcompose.suspendfunctions.viewModels.LaunchedEffectTestViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +26,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     val snackbarHostState = SnackbarHostState()
-                    LaunchedEffectTestScreen(snackbarHostState)
+                    LaunchedEffectTestScreen(snackbarHostState, LaunchedEffectTestViewModel())
 //                    Greeting("Android")
                 }
             }

@@ -8,10 +8,11 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.jetpackcompose.suspendfunctions.screens.LaunchedEffectTestScreen
+import com.jetpackcompose.suspendfunctions.screens.LoadingScreen
 import com.jetpackcompose.suspendfunctions.ui.theme.JetpackComposeSuspendFunctionsTheme
 import com.jetpackcompose.suspendfunctions.viewModels.LaunchedEffectTestViewModel
 
@@ -25,9 +26,16 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    val snackbarHostState = SnackbarHostState()
-                    LaunchedEffectTestScreen(snackbarHostState, LaunchedEffectTestViewModel())
-//                    Greeting("Android")
+                    var showLoading by remember {
+                        mutableStateOf(true)
+                    }
+
+                    if (showLoading) {
+                        LoadingScreen { showLoading = false }
+                    } else {
+                        val snackbarHostState = SnackbarHostState()
+                        LaunchedEffectTestScreen(snackbarHostState, LaunchedEffectTestViewModel())
+                    }
                 }
             }
         }

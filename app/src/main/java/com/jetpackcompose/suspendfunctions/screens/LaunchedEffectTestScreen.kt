@@ -30,7 +30,7 @@ fun LaunchedEffectTestScreen (
         snackbarHost = { SnackbarHost(hostState = snackbarHostState) }
     ) {
         Column {
-            Text(text = "LaunchedEffect Test")
+            Text(text = "LaunchedEffect Snackbar Test")
         }
     }
 

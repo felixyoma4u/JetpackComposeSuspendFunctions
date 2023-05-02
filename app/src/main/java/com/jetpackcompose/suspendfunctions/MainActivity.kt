@@ -11,9 +11,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.jetpackcompose.suspendfunctions.screens.LaunchedEffectNetworkState
 import com.jetpackcompose.suspendfunctions.screens.LaunchedEffectTestScreen
 import com.jetpackcompose.suspendfunctions.screens.LoadingScreen
 import com.jetpackcompose.suspendfunctions.ui.theme.JetpackComposeSuspendFunctionsTheme
+import com.jetpackcompose.suspendfunctions.viewModels.LaunchedEffectNetworkStateViewModel
 import com.jetpackcompose.suspendfunctions.viewModels.LaunchedEffectTestViewModel
 
 class MainActivity : ComponentActivity() {
@@ -26,16 +28,19 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    var showLoading by remember {
-                        mutableStateOf(true)
-                    }
+                    LaunchedEffectNetworkState(snackbarHostState = SnackbarHostState() , LaunchedEffectNetworkStateViewModel())
 
-                    if (showLoading) {
-                        LoadingScreen { showLoading = false }
-                    } else {
-                        val snackbarHostState = SnackbarHostState()
-                        LaunchedEffectTestScreen(snackbarHostState, LaunchedEffectTestViewModel())
-                    }
+// Loading Screen Test
+//                    var showLoading by remember {
+//                        mutableStateOf(true)
+//                    }
+//
+//                    if (showLoading) {
+//                        LoadingScreen { showLoading = false }
+//                    } else {
+//                        val snackbarHostState = SnackbarHostState()
+//                        LaunchedEffectTestScreen(snackbarHostState, LaunchedEffectTestViewModel())
+//                    }
                 }
             }
         }

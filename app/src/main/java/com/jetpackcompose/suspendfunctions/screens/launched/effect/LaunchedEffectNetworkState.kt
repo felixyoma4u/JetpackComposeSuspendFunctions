@@ -6,7 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import com.jetpackcompose.suspendfunctions.viewModels.LaunchedEffectNetworkStateViewModel
+import com.jetpackcompose.suspendfunctions.viewModels.launched.effect.LaunchedEffectNetworkStateViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")

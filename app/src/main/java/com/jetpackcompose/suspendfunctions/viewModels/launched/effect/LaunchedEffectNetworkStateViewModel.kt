@@ -1,4 +1,4 @@
-package com.jetpackcompose.suspendfunctions.viewModels
+package com.jetpackcompose.suspendfunctions.viewModels.launched.effect
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
